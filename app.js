@@ -1,12 +1,13 @@
 window.alert('Bem vindo(a) ao jogo do número secreto');
-let numeroSecreto = 9;
+let numeroSecreto = parseInt(Math.random() * 100 + 1);
+console.log(numeroSecreto)
 let numeroChute; 
 let tentativa = 1;
 
 while (numeroChute != numeroSecreto){
-numeroChute = window.prompt('Informe um número de 1 a 10:');
+numeroChute = window.prompt('Informe um número de 1 a 100:');
 if(numeroChute==numeroSecreto){
-    alert (`Parabéns, você descobriu o número secreto: ${numeroSecreto} com ${tentativa} tentativas`);
+    break
 }else{
     alert('Você errou :(')
     if(numeroChute > numeroSecreto){
@@ -17,4 +18,20 @@ if(numeroChute==numeroSecreto){
     tentativa++;
     }
 }
+
+//operador ternário
+// tentativa é maior que 1? se sim TENTATIVAS senão TENTATIVA
+let palavraTentativa = tentativa > 1 ? 'tentativas' : 'tentativa';
+alert(`Parabéns, você descobriu o número secreto: ${numeroSecreto} com ${tentativa} ${palavraTentativa}`)
+
+
+/*
+if(tentativa > 1){
+    alert (`Parabéns, você descobriu o número secreto: ${numeroSecreto} com ${tentativa} tentativas`);
+}else{
+    alert (`Parabéns, você descobriu o número secreto: ${numeroSecreto} com ${tentativa} tentativa`);
+}*/
+
+
+
 
